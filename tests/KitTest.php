@@ -15,13 +15,17 @@ class KitTest extends \PHPUnit_Framework_TestCase
     {
         $vendorDirectory = __DIR__ . '/../vendor';
 
-        $this->assertEquals(realpath($vendorDirectory), realpath(Kit::getVendorDirectory()));
+        $path = Kit::getVendorDirectory();
+
+        $this->assertExistingPath($path);
+        $this->assertEquals(realpath($vendorDirectory), realpath($path));
     }
 
     public function testGetVendorDirectoryReturnsAbsolutePath()
     {
         $path = Kit::getVendorDirectory();
 
+        $this->assertInternalType('string', $path);
         $this->assertNotContains('..', $path);
     }
 
@@ -36,13 +40,29 @@ class KitTest extends \PHPUnit_Framework_TestCase
     {
         $projectRoot = __DIR__ . '/..';
 
-        $this->assertEquals(realpath($projectRoot), realpath(Kit::getProjectRoot()));
+        $path = Kit::getProjectRoot();
+
+        $this->assertExistingPath($path);
+        $this->assertEquals(realpath($projectRoot), realpath($path));
     }
 
     public function testGetProjectRootReturnsAbsolutePath()
     {
         $path = Kit::getProjectRoot();
 
+        $this->assertInternalType('string', $path);
         $this->assertNotContains('..', $path);
+    }
+
+    /**
+     * Asserts that the given path is not empty and points to an existing file or
+     * directory.
+     *
+     * @param string|mixed $path
+     */
+    protected function assertExistingPath($path)
+    {
+        $this->assertInternalType('string', $path);
+        $this->assertFileExists($path);
     }
 }
