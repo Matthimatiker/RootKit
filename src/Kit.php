@@ -22,7 +22,7 @@ class Kit
                 return $possibleRoot;
             }
             $possibleRoot = dirname($possibleRoot);
-        } while ($possibleRoot !== dirname($possibleRoot));
+        } while (static::isSystemRoot($possibleRoot));
         throw new \RuntimeException(
             'Cannot determine path to project root directory. ' .
             'It is assumed that the root directory contains the composer.json.'
@@ -39,5 +39,21 @@ class Kit
         $reflection = new \ReflectionClass('\Composer\Autoload\ClassLoader');
         $classLoaderFilePath = $reflection->getFileName();
         return dirname(dirname($classLoaderFilePath));
+    }
+
+    /**
+     * Checks if $path is the system root.
+     *
+     * Example:
+     *
+     *     static::isSystemRoot('/'); // returns true
+     *     static::isSystemRoot('/src'); // returns false
+     *
+     * @param string $path
+     * @return boolean
+     */
+    protected static function isSystemRoot($path)
+    {
+        return $path !== dirname($path);
     }
 }
