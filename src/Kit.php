@@ -12,10 +12,21 @@ class Kit
      * Returns the path to the root directory of the project.
      *
      * @return string
+     * @throws \RuntimeException If the root was not found.
      */
     public static function getProjectRoot()
     {
-        return dirname(static::getVendorDirectory());
+        $possibleRoot = dirname(static::getVendorDirectory());
+        do {
+            if (is_file($possibleRoot . '/composer.json')) {
+                return $possibleRoot;
+            }
+            $possibleRoot = dirname($possibleRoot);
+        } while ($possibleRoot !== dirname($possibleRoot));
+        throw new \RuntimeException(
+            'Cannot determine path to project root directory. ' .
+            'It is assumed that the root directory contains the composer.json.'
+        );
     }
 
     /**
