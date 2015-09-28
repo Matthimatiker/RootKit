@@ -22,7 +22,7 @@ class Kit
                 return $possibleRoot;
             }
             $possibleRoot = dirname($possibleRoot);
-        } while (static::isSystemRoot($possibleRoot));
+        } while (!static::isSystemRoot($possibleRoot));
         throw new \RuntimeException(
             'Cannot determine path to project root directory. ' .
             'It is assumed that the root directory contains the composer.json.'
@@ -54,6 +54,6 @@ class Kit
      */
     protected static function isSystemRoot($path)
     {
-        return $path !== dirname($path);
+        return $path === dirname($path);
     }
 }
