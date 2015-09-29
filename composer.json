@@ -1,6 +1,6 @@
 {
     "name": "matthimatiker/root-kit",
-    "description": "",
+    "description": "Library to reliably determine the project root directory of a Composer project.",
     "minimum-stability": "stable",
     "license": "MIT",
     "authors": [
