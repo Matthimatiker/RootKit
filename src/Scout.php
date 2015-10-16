@@ -6,7 +6,7 @@ namespace Matthimatiker\Scout;
  * Provides methods to determine the path to the project root and the vendor directory
  * in Composer enabled projects.
  */
-class Kit
+class Scout
 {
     /**
      * Returns the path to the root directory of the project.

@@ -2,11 +2,11 @@
 
 namespace Matthimatiker\Scout;
 
-class KitTest extends \PHPUnit_Framework_TestCase
+class ScoutTest extends \PHPUnit_Framework_TestCase
 {
     public function testGetVendorDirectoryReturnsPathToDirectory()
     {
-        $path = Kit::getVendorDirectory();
+        $path = Scout::getVendorDirectory();
 
         $this->assertTrue(is_dir($path), '"' . $path . '" is not a directory path.');
     }
@@ -15,7 +15,7 @@ class KitTest extends \PHPUnit_Framework_TestCase
     {
         $vendorDirectory = __DIR__ . '/../vendor';
 
-        $path = Kit::getVendorDirectory();
+        $path = Scout::getVendorDirectory();
 
         $this->assertExistingPath($path);
         $this->assertEquals(realpath($vendorDirectory), realpath($path));
@@ -23,7 +23,7 @@ class KitTest extends \PHPUnit_Framework_TestCase
 
     public function testGetVendorDirectoryReturnsAbsolutePath()
     {
-        $path = Kit::getVendorDirectory();
+        $path = Scout::getVendorDirectory();
 
         $this->assertInternalType('string', $path);
         $this->assertNotContains('..', $path);
@@ -31,7 +31,7 @@ class KitTest extends \PHPUnit_Framework_TestCase
 
     public function testGetProjectRootReturnsPathToDirectory()
     {
-        $path = Kit::getProjectRoot();
+        $path = Scout::getProjectRoot();
 
         $this->assertTrue(is_dir($path), '"' . $path . '" is not a directory path.');
     }
@@ -40,7 +40,7 @@ class KitTest extends \PHPUnit_Framework_TestCase
     {
         $projectRoot = __DIR__ . '/..';
 
-        $path = Kit::getProjectRoot();
+        $path = Scout::getProjectRoot();
 
         $this->assertExistingPath($path);
         $this->assertEquals(realpath($projectRoot), realpath($path));
@@ -48,7 +48,7 @@ class KitTest extends \PHPUnit_Framework_TestCase
 
     public function testGetProjectRootReturnsAbsolutePath()
     {
-        $path = Kit::getProjectRoot();
+        $path = Scout::getProjectRoot();
 
         $this->assertInternalType('string', $path);
         $this->assertNotContains('..', $path);
