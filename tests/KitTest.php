@@ -1,6 +1,6 @@
 <?php
 
-namespace Matthimatiker\RootKit;
+namespace Matthimatiker\Scout;
 
 class KitTest extends \PHPUnit_Framework_TestCase
 {

@@ -1,7 +1,7 @@
-# RootKit #
+# Scout #
 
-[![Build Status](https://travis-ci.org/Matthimatiker/RootKit.svg?branch=master)](https://travis-ci.org/Matthimatiker/RootKit)
-[![Coverage Status](https://coveralls.io/repos/Matthimatiker/RootKit/badge.svg?branch=master&service=github)](https://coveralls.io/github/Matthimatiker/RootKit?branch=master)
+[![Build Status](https://travis-ci.org/Matthimatiker/Scout.svg?branch=master)](https://travis-ci.org/Matthimatiker/Scout)
+[![Coverage Status](https://coveralls.io/repos/Matthimatiker/Scout/badge.svg?branch=master&service=github)](https://coveralls.io/github/Matthimatiker/Scout?branch=master)
 
 ## Initialization Tasks (remove this block once you are done) ##
 

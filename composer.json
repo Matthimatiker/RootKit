@@ -1,5 +1,5 @@
 {
-    "name": "matthimatiker/root-kit",
+    "name": "matthimatiker/scout",
     "description": "Library to reliably determine the project root directory of a Composer project.",
     "minimum-stability": "stable",
     "license": "MIT",
@@ -21,7 +21,7 @@
 
     "autoload": {
         "psr-4": {
-            "Matthimatiker\\RootKit\\": "src"
+            "Matthimatiker\\Scout\\": "src"
         }
     }
 }

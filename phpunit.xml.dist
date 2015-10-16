@@ -9,7 +9,7 @@
     </php>
 
     <testsuites>
-        <testsuite name="RootKit Test Suite">
+        <testsuite name="Scout Test Suite">
             <directory>tests/</directory>
         </testsuite>
     </testsuites>

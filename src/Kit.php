@@ -1,6 +1,6 @@
 <?php
 
-namespace Matthimatiker\RootKit;
+namespace Matthimatiker\Scout;
 
 /**
  * Provides methods to determine the path to the project root and the vendor directory
